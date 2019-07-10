@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Student data</title>
+    </head>
+    <script type="text/javascript">
+    data ={ func:(function(){
+        $.ajax({
+    type:"GET", 
+    url: "http://localhost:3000/addname", 
+    success: function(data) {
+            $("body").append(JSON.stringify(data));
+        }, 
+    error: function(jqXHR, textStatus, errorThrown) {
+            alert(jqXHR.status);
+        },
+   dataType: "jsonp"
+});​​​​​​​​​​​​​​​
+})()
+}
+
+        var number = 123;
+    </script>
+    <body>
+        <h1>Student data</h1>
+        <form method="POST" action="/">
+            <label>Enter Your Name</label><br>
+            <input type="text" name="firstName" placeholder="Enter first name..." required>
+            <input type="text" name="lastName" placeholder="Enter last name..." required></br>
+            <label>Enter Course Detail</label><br>
+            <input type="text" name="clgName" placeholder="Enter college name..." required>
+            <input type="text" name="courseName" placeholder="Enter course name..." required></br>
+            <input type="submit" value="Add Detail"></br>
+        </form>
+        <p>
+                <script type="text/javascript">
+                    document.write(data)
+                  </script>
+        </p>
+    </body>
+</html>
